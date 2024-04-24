@@ -33,6 +33,7 @@ Decel is built using a microservices architecture. The main components of Decel 
 
 Decel is built using the following technologies:
 
+- **pnpm**: pnpm is used for package management.
 - **Nest.js**: Nest.js is used for building the microservices.
 - **Docker**: Docker is used for containerization. Also used for building and deploying of projects hosted by us.
 - **Kubernetes**: Kubernetes is used for container orchestration. Also used for deploying projects hosted by us.

@@ -59,7 +59,7 @@ bash scripts/test.sh
 
 To contribute to the project effectively, ensure you have the following tools and dependencies installed:
 
-- `Node.js` and `npm`: Required for running the project and managing dependencies.
+- `Node.js` and `pnpm`: Required for running the project and managing dependencies.
 - `Git`: Necessary for version control and collaborating on code changes.
 - `Docker`: Essential for containerization and deployment of the project.
 - `Kubernetes` (**Optional**): Required for container orchestration and managing deployments.
