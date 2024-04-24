@@ -2,8 +2,10 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  getTest(data: string): string {
-    console.log('success calling analytics service!', data);
-    return 'success calling analytics service!';
+  getTest(data: string) {
+    return {
+      status: 200,
+      message: 'Analytics service is working!',
+    };
   }
 }

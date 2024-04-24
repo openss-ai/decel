@@ -12,7 +12,7 @@ export class AppController {
   }
 
   @MessagePattern('deployServiceWorking')
-  getTest(data: string): string {
+  getTest(data: string) {
     return this.appService.getTest(data);
   }
 }

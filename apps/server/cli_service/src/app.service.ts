@@ -6,8 +6,10 @@ export class AppService {
     return 'Hello World!';
   }
 
-  getTest(data: string): string {
-    console.log('success calling cli service!', data);
-    return 'success calling cli service!';
+  getTest(data: string) {
+    return {
+      status: 200,
+      message: 'Cli service is working!',
+    };
   }
 }

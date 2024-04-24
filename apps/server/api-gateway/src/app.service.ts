@@ -12,42 +12,28 @@ export class AppService {
     @Inject('CLI_SERVICE') private readonly cliClient: ClientProxy,
   ) {}
 
-  getHello(): string {
-    return 'Hello World!';
-  }
-
-  async getAnalyticsServiceUpdate(): Promise<String> {
-    const analyticsServiceUpdate: String = await lastValueFrom(
-      this.analyticsClient.emit('analyticsServiceWorking', 'Test!'),
+  async getHello(): Promise<MicroServiceEventStatus[]> {
+    const analyticsServiceUpdate: MicroServiceEventStatus = await lastValueFrom(
+      this.analyticsClient.send('analyticsServiceWorking', 'Test!'),
     );
-    return analyticsServiceUpdate;
-  }
-
-  async getGithubServiceUpdate(): Promise<String> {
-    const githubServiceUpdate: String = await lastValueFrom(
-      this.githubClient.emit('githubServiceWorking', 'Test!'),
+    const githubServiceUpdate: MicroServiceEventStatus = await lastValueFrom(
+      this.githubClient.send('githubServiceWorking', 'Test!'),
     );
-    return githubServiceUpdate;
-  }
-
-  async getDeployServiceUpdate(): Promise<String> {
-    const deployServiceUpdate: String = await lastValueFrom(
-      this.deployClient.emit('deployServiceWorking', 'Test!'),
+    const deployServiceUpdate: MicroServiceEventStatus = await lastValueFrom(
+      this.deployClient.send('deployServiceWorking', 'Test!'),
     );
-    return deployServiceUpdate;
-  }
-
-  async getDashboardServiceUpdate(): Promise<String> {
-    const dashboardServiceUpdate: String = await lastValueFrom(
-      this.dashboardClient.emit('dashboardServiceWorking', 'Test!'),
+    const dashboardServiceUpdate: MicroServiceEventStatus = await lastValueFrom(
+      this.dashboardClient.send('dashboardServiceWorking', 'Test!'),
     );
-    return dashboardServiceUpdate;
-  }
-
-  async getCliServiceUpdate(): Promise<String> {
-    const githubServiceUpdate: String = await lastValueFrom(
-      this.cliClient.emit('cliServiceWorking', 'Test!'),
+    const cliServiceUpdate: MicroServiceEventStatus = await lastValueFrom(
+      this.cliClient.send('cliServiceWorking', 'Test!'),
     );
-    return githubServiceUpdate;
+    return [
+      analyticsServiceUpdate,
+      githubServiceUpdate,
+      deployServiceUpdate,
+      dashboardServiceUpdate,
+      cliServiceUpdate,
+    ];
   }
 }

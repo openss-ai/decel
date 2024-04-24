@@ -6,8 +6,10 @@ export class AppService {
     return 'Hello World!';
   }
 
-  getTest(data: string): string {
-    console.log('success calling deploy service!', data);
-    return 'success calling deploy service!';
+  getTest(data: string) {
+    return {
+      status: 200,
+      message: 'Deploy service is working!',
+    };
   }
 }

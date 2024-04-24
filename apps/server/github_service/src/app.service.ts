@@ -6,8 +6,10 @@ export class AppService {
     return 'Hello World!';
   }
 
-  getTest(data: string): string {
-    console.log('success calling github service!', data);
-    return 'success calling github service!';
+  getTest(data: string) {
+    return {
+      status: 200,
+      message: 'Github service is working!',
+    };
   }
 }

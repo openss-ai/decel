@@ -6,8 +6,10 @@ export class AppService {
     return 'Hello World!';
   }
 
-  getTest(data: string): string {
-    console.log('success calling dashboard service!', data);
-    return 'success calling dashboard service!';
+  getTest(data: string) {
+    return {
+      status: 200,
+      message: 'Dashboard service is working!',
+    };
   }
 }
