@@ -1,6 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { lastValueFrom } from 'rxjs';
+import DeployFromGithub from './dto/deploy.dto';
 
 @Injectable()
 export class AppService {
@@ -35,5 +36,9 @@ export class AppService {
       dashboardServiceUpdate,
       cliServiceUpdate,
     ];
+  }
+
+  async deployFromGitHub(data: DeployFromGithub) {
+    return await this.deployClient.send('deployFromGitHub', data);
   }
 }
