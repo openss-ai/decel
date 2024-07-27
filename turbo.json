@@ -1,0 +1,31 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "start:dev": {
+      "persistent": true,
+      "outputs": ["dist/**", ".next/**", "!.next/**"]
+    },
+    "lint": {
+      "outputs": ["dist/**", ".next/**", "!.next/**"]
+    },
+    "format": {
+      "outputs": ["dist/**", ".next/**", "!.next/**"]
+    },
+    "push": {
+      "dependsOn": ["build", "lint", "format"],
+      "outputs": ["dist/**", ".next/**", "!.next/**"]
+    },
+    "build": {
+      "outputs": ["dist/**", ".next/**", "!.next/**"]
+    },
+    "prod": {
+      "persistent": true,
+      "dependsOn": ["build"],
+      "outputs": ["dist/**", ".next/**", "!.next/**"]
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "outputs": ["dist/**", ".next/**", "!.next/**"]
+    }
+  }
+}

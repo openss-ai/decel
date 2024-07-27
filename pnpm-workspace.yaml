@@ -1,0 +1,9 @@
+packages:
+  - 'apps/server/analytics'
+  - 'apps/server/api-gateway'
+  - 'apps/server/cli_service'
+  - 'apps/server/dashboard_service'
+  - 'apps/server/deploy_service'
+  - 'apps/server/github_service' 
+  - 'packages/*'
+  - 'apps/web'

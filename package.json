@@ -1,0 +1,41 @@
+{
+  "name": "decel",
+  "version": "0.1.0",
+  "description": "vercel but on steriods",
+  "main": "index.js",
+  "scripts": {
+    "lint": "turbo lint",
+    "format": "turbo format",
+    "push": "turbo push",
+    "dev": "turbo start:dev",
+    "build": "turbo build",
+    "start": "turbo start",
+    "prod": "turbo prod",
+    "test": "turbo test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/himasnhu-at/decel.git"
+  },
+  "keywords": [
+    "decel",
+    "deploy",
+    "services",
+    "azure"
+  ],
+  "author": {
+    "name": "Himanshu",
+    "email": "hyattherate2005@gmail.com",
+    "url": "https://himasnhu-at.vercel.app",
+    "git": "Himasnhu-at"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/himasnhu-at/decel/issues"
+  },
+  "homepage": "https://github.com/himasnhu-at/decel#readme",
+  "devDependencies": {
+    "turbo": "^2.0.9"
+  },
+  "packageManager": "pnpm@8.10.5"
+}
