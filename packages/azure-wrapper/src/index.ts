@@ -1,6 +1,6 @@
 import { DefaultAzureCredential } from "@azure/identity";
 import { ContainerInstanceManagementClient } from "@azure/arm-containerinstance";
-import { ContainerGroup } from "@azure/arm-containerinstance/esm/models";
+import { ContainerGroup } from "@azure/arm-containerinstance";
 
 const subscriptionId = "YOUR_AZURE_SUBSCRIPTION_ID";
 const resourceGroupName = "YOUR_RESOURCE_GROUP_NAME";
@@ -15,7 +15,7 @@ async function deployDockerImage() {
   const credential = new DefaultAzureCredential();
   const client = new ContainerInstanceManagementClient(
     credential,
-    subscriptionId,
+    subscriptionId
   );
 
   // Define the container group
@@ -55,7 +55,7 @@ async function deployDockerImage() {
   const result = await client.containerGroups.beginCreateOrUpdateAndWait(
     resourceGroupName,
     containerGroupName,
-    containerGroup,
+    containerGroup
   );
   console.log("Container deployed!");
 
@@ -63,7 +63,7 @@ async function deployDockerImage() {
   const publicIpAddress = result.ipAddress?.ip;
   if (publicIpAddress) {
     console.log(
-      `Container is running at http://${publicIpAddress}:${publicPort}`,
+      `Container is running at http://${publicIpAddress}:${publicPort}`
     );
   } else {
     console.log("Failed to get the public IP address.");
